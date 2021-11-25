@@ -1,0 +1,436 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button {
+    margin: 0;
+    padding: 0;
+}
+body, button, input, select, textarea {
+    font: 12px/1.5 \5FAE\8F6F\96C5\9ED1;
+    color: #333;
+}
+div,table,thead{
+     white-space: nowrap;//强制不折行
+}
+b {
+    color: #db4a39;
+}
+.header-search {
+    width: 100%;
+    height: 69px;
+    background: #3c5c9f url('http://i.thsi.cn/images/datacenter/financial/header-search-bg.jpg') repeat-x;
+}
+.header-search .hdlogo {
+    float: left;
+    margin-left: 1px;
+    width: 300px;
+    height: 69px;
+}
+.header-search .hdlogo .site-logo {
+    float: left;
+    margin-top: 10px;
+}
+.header-search .hdlogo h1 {
+    float: left;
+}
+.header-search .hdlogo h1 .sub-logo {
+    margin-left: 10px;
+    line-height: 69px;
+    font-size: 34px;
+    color: #fff;
+    font-weight: bold;
+}
+.header-search {
+    width: 100%;
+    height: 69px;
+    background: #3c5c9f url('http://i.thsi.cn/images/datacenter/financial/header-search-bg.jpg') repeat-x;
+}
+a:-webkit-any-link {
+
+    color: #db4a39;
+    cursor: pointer;
+    text-decoration: none;
+}
+.w1200 {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.w1300 {
+    width: 1600px;
+    margin: 0 auto;
+}
+fieldset, img {
+    border: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+div {
+    display: block;
+}
+.clearfix {
+    zoom: 1;
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+a {
+    text-decoration: none;
+}
+.header-search .hdlogo .site-logo {
+    float: left;
+    margin-top: 10px;
+}
+fieldset, img {
+    border: 0;
+}
+img[Attributes Style] {
+    width: 142px;
+    aspect-ratio: auto 142 / 46;
+    height: 46px;
+}
+a {
+    text-decoration: none;
+}
+.header-search .hdlogo h1 {
+    float: left;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.header-search .hdlogo h1 .sub-logo {
+    margin-left: 10px;
+    line-height: 69px;
+    font-size: 34px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.search-box {
+    float: left;
+    margin-left: 50px;
+    padding: 16px 0;
+}
+.search-box .search-list {
+    float: left;
+    padding: 0 15px;
+}
+.search-box .search-list span {
+    float: left;
+    color: #4768ab;
+    height: 13px;
+    line-height: 13px;
+    margin: 12px;
+}
+.search-box .search-list a {
+    float: left;
+    font-size: 16px;
+    color: #8fa8db;
+    line-height: 37px;
+}
+.search-box .search-list a.cur {
+    color: #fff;
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+}
+.search-box .search-main {
+    position: relative;
+    float: left;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.search-box .search-main .search-input {
+    float: left;
+    width: 432px;
+    height: 17px;
+    padding: 10px 47px 10px 10px;
+    line-height: 17px;
+    color: #4c75c9;
+    font-size: 12px;
+    font-family: \5B8B\4F53;
+    background: #324e87;
+    border: 0;
+}
+.search-box .search-main .search-btn {
+    position: absolute;
+    right: 0;
+    top: 1px;
+    width: 45px;
+    height: 35px;
+    background: #324e87 url('http://i.thsi.cn/images/datacenter/financial/search-btn-light2.jpg') 50% 50% no-repeat;
+    border: 0;
+    cursor: pointer;
+    outline: 0;
+}
+.login-box {
+    float: right;
+    padding: 26px 15px 25px 15px;
+    height: 18px;
+}
+.login-box a {
+    float: left;
+    font-size: 14px;
+    color: #fff;
+}
+a {
+    text-decoration: none;
+}
+.login-box span {
+    float: left;
+    color: #fff;
+    margin: 0 12px;
+}
+.login-box a {
+    float: left;
+    font-size: 14px;
+    color: #fff;
+}
+.hide {
+    display: none;
+}
+.logined_box {
+    height: 68px;
+    color: #fff;
+    font-size: 14px;
+}
+.fr {
+    float: right;
+}
+.nav {
+    width: 100%;
+    height: 55px;
+    background: #fff;
+    text-align: center;
+    -webkit-box-shadow: 0 1px 5px 0 #c6c5c5;
+    -moz-box-shadow: 0 1px 5px 0 #c6c5c5;
+    box-shadow: 0 1px 5px 0 #c6c5c5;
+}
+.inner-nav a {
+    display: inline-block;
+    padding: 0 16px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 14px;
+    color: #666;
+    border-bottom: 3px solid #fff;
+}
+.inner-nav .active {
+    background: #db4a39;
+    color: #fff;
+}
+.page-nav {
+    margin-top: 20px;
+    height: 36px;
+}
+.page-main {
+    position: relative;
+    padding: 30px 25px;
+}
+.table-tit h2 {
+    float: left;
+    font-size: 18px;
+    color: #fff;
+    padding-left: 35px;
+    line-height: 25px;
+}
+.icon-sgpx {
+    background-position: 0 7px;
+}
+.icon-yjkb, .icon-sgpx, .icon-yjgg, .icon-yjkb, .icon-yjypl, .icon-yjyg {
+    background: url('http://i.thsi.cn/images/datacenter/financial/cbicons.jpg') no-repeat;
+}
+.page-cont {
+    width: 100%;
+    background: #ecf2f6;
+    box-shadow: 3px 3px 3px #dedddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.table-tab {
+    padding: 8px 10px;
+    background: #f7fafb;
+    border-bottom: 1px solid #e6ebed;
+}
+.table-tit {
+    position: relative;
+    padding: 0 10px;
+    height: 45px;
+    background: #3b5998;
+    border-radius: 4px 4px 0 0;
+    z-index: 12;
+}
+.table-tab a.cur {
+    color: #fff;
+    background: #db4a39;
+    border-radius: 10px;
+}
+.table-tab a {
+    display: inline-block;
+    padding: 0 10px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #8a95a5;
+}
+.page-table {
+    position: relative;
+    width: 100%;
+    padding-top: 5px;
+    background: #f7fafb;
+    z-index: 10;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 0px;
+    border-color: gray;
+}
+thead {
+    display: block;
+    width: 1650px;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+address, caption, cite, code, dfn, em, th, var {
+    font-style: normal;
+    font-weight: 500;
+}
+
+table {
+    height: 700px;
+    /*overflow-y: scroll;*/
+}
+tbody {
+    width: 1650px;
+    vertical-align: middle;
+    border-color: inherit;
+    display: inline-block;
+    height: 700px;
+    overflow-x: scroll;
+}
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+.m-table {
+    display: block;
+    background: #fff;
+    font-size: 13px;
+    /*overflow: hidden;//控制溢出隐藏*/
+    overflow: scroll;
+}
+.m-table th {
+    position: relative;
+    background: #f7fafb;
+    color: #787878;
+    text-align: center;
+    padding: 10px 0px 20px 0px;
+    line-height: 16px;
+}
+.m-table tr.even {
+    background: #f7fafb;
+}
+
+.m-page {
+    text-align: center;
+    margin: 12px 35px 0 35px;
+    border-top: 1px solid #e9e9e9;
+    padding-bottom: 12px;
+}
+.m-table th.cur {
+    background: #db4a39;
+    border-radius: 10px 10px 0 0;
+}
+.m-table th.cur a {
+    background: #db4a39;
+    color: #fff;
+    font-weight: bold;
+}
+.m-table td {
+    padding: 0 2px;
+    text-align: center;
+    line-height: 28px;
+    border-left: 1px solid #eaeff2;
+    border-right: 1px solid #eaeff2;
+}
+.m-page a.cur {
+    color: #db4a39;
+    border-top: 1px solid #db4a39;
+    margin-top: 0;
+    padding-top: 9px;
+}
+.m-page a, .m-page span {
+    display: inline-block;
+    padding: 0 6px;
+    height: 18px;
+    margin: 9px 6px;
+    font-size: 14px;
+    color: #868686;
+    font-family: Arial,\5FAE\8F6F\96C5\9ED1;
+}
+.m-page a, .m-page span {
+    display: inline-block;
+    padding: 0 6px;
+    height: 18px;
+    margin: 9px 6px;
+    font-size: 14px;
+    color: #868686;
+    font-family: Arial,\5FAE\8F6F\96C5\9ED1;
+}
+.m-table th .arr-down, .m-table th .arr-up {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -6px;
+    background: #000;
+    display: block;
+    width: 11px;
+    height: 6px;
+    background: url('http://i.thsi.cn/images/datacenter/financial/arrow.png') 0 0;
+    overflow: hidden;
+}
+.m-table th.cur .arr-down {
+    background-position: 0 -6px;
+}
+.m-table th a {
+    color: #787878;
+}
+i {
+    font-style: italic;
+}
