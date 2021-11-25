@@ -20,7 +20,7 @@ var app = new Vue({
                 ["市盈率","90px","pe"],
                 ["流通股","90px","circulate_stock"],
             ],
-            active:"industry",
+            active:"individual",
             param:{
                 "compareNum": 2,
                 "periodNum": 3,
@@ -34,8 +34,8 @@ var app = new Vue({
     },
     created:function(){
         this.handle_data("",this.active);
-        this.param.cdate = get_now_date();
-        Vue.set(this,'table_th',this.industry);
+        Vue.set(this,'table_th',this[this.active]);
+        console.log(11);
     },
     methods: {
         reset_param: function() {
@@ -55,9 +55,12 @@ var app = new Vue({
             if (individual_code) {
                 this.param.individual_code = individual_code;
             }
+                console.log(this.param);
+
         },
         handle_data: function(event,flag) {
             this.active = flag ? flag : this.active;
+            this.param.cdate = get_now_date();
             this.reset_param()
             ob = this;
             if (event) {
@@ -141,6 +144,11 @@ var app = new Vue({
             else return  pre_fix + value;
         },
         sort_data(event,flag) {
+            console.log(122);
+            var index = layer.load(1, {
+                time: 2*1000,
+                shade: [0.4,'#fff'] //0.1透明度的白色背景
+            });
             if (event) {
                 $(event.target).closest("tr").find("th").removeClass("cur");
                 $(event.target).parent("th").addClass("cur");
@@ -160,6 +168,7 @@ var app = new Vue({
                 return b[flag] - a[flag];
             });
             Vue.set(this,'todos',todos);
+            layer.close(index);
         }
     }
     
