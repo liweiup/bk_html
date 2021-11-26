@@ -1,12 +1,15 @@
 var app = new Vue({
     el: '#app',
         data: {
-            industry: [
-                ["行业","60px"],
-                ["交易额占市值(百分比)","150px"],
-                ["流通市值","150px"],
-                ["成交额","120px"],
-                ["净额(亿)","130px"],
+             plate: [
+                ["板块","200px",""],
+                ["涨跌幅","270px","avg_rose_ratio"],
+                ["成交额","340px","avg_ob_rise_price"],
+                ["成交量","280px","avg_ob_rise_volume"],
+                ["净流入额","260px","avg_fund_real_in"],
+                ["均价","200px","avg_price"],
+                ["上涨家数","100px","rise_company_num"],
+                ["下跌家数","100px","drop_company_num"],
             ],
             individual: [
                 ["股票","80px","individual_code"],
@@ -15,17 +18,16 @@ var app = new Vue({
                 ["量比","190px","avg_relative"],
                 ["振幅","280px","avg_amplitude_ratio"],
                 ["成交额","300px","avg_ob_rise_price"],
+                ["当前价格","150px","now_price"],
                 ["流通市值","90px","circulate_value"],
-                ["当前价格","90px","now_price"],
-                ["市盈率","90px","pe"],
+                ["市盈率","80px","pe"],
                 ["流通股","90px","circulate_stock"],
             ],
             active:"individual",
             param:{
-                "compareNum": 2,
-                "periodNum": 3,
-                "fundType": 2,
-                "individual_code":"",
+                "compareNum": 1,
+                "periodNum": 5,
+                "individual_code":"000088,002739,600031,600183,600211,603987",
                 "cdate":''
             },
             table_th:[],
@@ -35,7 +37,6 @@ var app = new Vue({
     created:function(){
         this.handle_data("",this.active);
         Vue.set(this,'table_th',this[this.active]);
-        console.log(11);
     },
     methods: {
         reset_param: function() {
@@ -55,8 +56,6 @@ var app = new Vue({
             if (individual_code) {
                 this.param.individual_code = individual_code;
             }
-                console.log(this.param);
-
         },
         handle_data: function(event,flag) {
             this.active = flag ? flag : this.active;
@@ -68,7 +67,6 @@ var app = new Vue({
                 $(event.target).addClass("active");
             }
             var index = layer.load(1, {
-                time: 2*1000,
                 shade: [0.4,'#fff'] //0.1透明度的白色背景
             });
             switch (this.active) {
@@ -78,7 +76,11 @@ var app = new Vue({
                         layer.close(index);
                     })
                     break;
-                case 'industry':
+                case 'plate':
+                     ob.get_plate_data(function() {
+                        Vue.set(ob,'table_th',ob.plate);
+                        layer.close(index);
+                    })
                     break;
                 case '':
                     break;
@@ -86,12 +88,13 @@ var app = new Vue({
                     break;
             }
         },
-        get_industry_data: function (next_step = "") {
+        get_plate_data: function (next_step = "") {
             var vm = this
             var param = this.param;
             vm.$http.post(host + '/api/getPlateBankrollData',param).then(function (response) {
                 if (response.data.code == 0) {
                     Vue.set(this,'todos',response.data.data);
+                    next_step && next_step();
                 }
             }).catch(function (error) {
                 vm.answer = 'Error! Could not reach the API. ' + error
@@ -144,9 +147,7 @@ var app = new Vue({
             else return  pre_fix + value;
         },
         sort_data(event,flag) {
-            console.log(122);
             var index = layer.load(1, {
-                time: 2*1000,
                 shade: [0.4,'#fff'] //0.1透明度的白色背景
             });
             if (event) {
@@ -157,12 +158,6 @@ var app = new Vue({
             todos.sort(function(a,b) {
                 if (flag == "pe") 
                 {
-                    if (b[flag] == 0) {
-                        b[flag] = 1000
-                    }
-                    if (a[flag] == 0) {
-                        a[flag] = 1000
-                    }
                     return a[flag] - b[flag];
                 }
                 return b[flag] - a[flag];
