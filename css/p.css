@@ -6,9 +6,24 @@ body, button, input, select, textarea {
     font: 12px/1.5 \5FAE\8F6F\96C5\9ED1;
     color: #333;
 }
-div,table,thead,th{
-     white-space: nowrap;//强制不折行
+table tbody {
+display:block;
+height:700px;
+overflow-y:scroll;
 }
+ 
+table thead, tbody tr {
+display:table;
+width:100%;
+table-layout:fixed;
+}
+ 
+table thead {
+font-size: 15px
+width: calc( 100% - 1em )
+}
+table thead th{ background:#ccc;}
+
 b {
     color: #db4a39;
 }
@@ -311,8 +326,8 @@ table {
     border-color: gray;
 }
 thead {
-    display: block;
-    width: 1650px;
+    /*display: block;*/ 
+    /*width: 1650px;*/
     vertical-align: middle;
     border-color: inherit;
 }
@@ -328,13 +343,11 @@ address, caption, cite, code, dfn, em, th, var {
 
 table {
     height: 700px;
-    /*overflow-y: scroll;*/
+    overflow-y: scroll;
 }
 tbody {
-    width: 1650px;
     vertical-align: middle;
     border-color: inherit;
-    display: inline-block;
     height: 700px;
     overflow-x: scroll;
 }
@@ -345,15 +358,15 @@ th {
     text-align: -internal-center;
 }
 td {
-    display: table-cell;
+    /*display: table-cell;*/
     vertical-align: inherit;
 }
 .m-table {
-    display: block;
     background: #fff;
     font-size: 13px;
-    /*overflow: hidden;//控制溢出隐藏*/
     overflow: scroll;
+    width: 100%;
+    table-layout:fixed !important;
 }
 .m-table th {
     position: relative;
@@ -388,6 +401,7 @@ td {
     line-height: 28px;
     border-left: 1px solid #eaeff2;
     border-right: 1px solid #eaeff2;
+    border-bottom: 1px solid #eaeff2;
 }
 .m-page a.cur {
     color: #db4a39;
