@@ -26,7 +26,7 @@ var app = new Vue({
             active:"individual",
             param:{
                 "compareNum": 1,
-                "periodNum": 5,
+                "periodNum": 4,
                 "individual_code":"000088,002739,600031,600183,600211,603987",
                 "cdate":''
             },
