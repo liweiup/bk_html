@@ -81,7 +81,7 @@
                     <a href="###" class="J-board-item" board="10">
                         <input type="text" name="cdate" placeholder="截止日期">
                     </a>
-                    <a href="###" class="J-board-item" board="10" v-if="industry_sel.length > 0">
+                    <a href="###" class="J-board-item" board="10" v-if="industry_sel.length > 0 && active == 'individual'">
                         <select id="industry_sel">
                             <option>选择行业</option>
                             <option v-for="op in industry_sel" :value="op.individual_code">{{ op.industry_name }} </option>
