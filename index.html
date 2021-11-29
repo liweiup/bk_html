@@ -136,8 +136,8 @@
                                 <b  v-if="todo.avg_ob_rise_price < 0" style="color:green">({{ get_upper(todo.avg_ob_price) }} {{ get_float(todo.avg_ob_rise_price,2) }})</b>
                             </td>
                             <td class=""><a v-for="(tdv,tdi) in todo.ob_volume"><p>{{ get_upper(tdv) }}</p></a>
-                                <b  v-if="todo.avg_ob_volume > 0" style="color:red">({{ get_upper(todo.avg_ob_volume) }} {{ get_float(todo.avg_ob_rise_volume,2) }})</b>
-                                <b  v-if="todo.avg_ob_volume < 0" style="color:green">({{ get_upper(todo.avg_ob_volume) }} {{ get_float(todo.avg_ob_rise_volume,2) }})</b>
+                                <b  v-if="todo.avg_ob_rise_volume > 0" style="color:red">({{ get_upper(todo.avg_ob_volume) }} {{ get_float(todo.avg_ob_rise_volume,2) }})</b>
+                                <b  v-if="todo.avg_ob_rise_volume < 0" style="color:green">({{ get_upper(todo.avg_ob_volume) }} {{ get_float(todo.avg_ob_rise_volume,2) }})</b>
                             </td>
                             <td class=""><a v-for="(tdv,tdi) in todo.fund_real_in"><p>{{ get_upper(tdv) }}</p></a>
                                 <b  v-if="todo.avg_fund_real_in > 0" style="color:red">{{ get_upper(todo.avg_fund_real_in) }}</b>
