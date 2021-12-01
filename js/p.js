@@ -32,7 +32,7 @@ function getDay_common(day,act){
 }
 
 function get_now_date() {
-	var dayFlag = new Date().getHours() < 19 ? -2 : -1;
+	var dayFlag = new Date().getHours() < 10 ? -2 : -1;
     return getDay_common(dayFlag,1)
 	return dateStr;
 }
