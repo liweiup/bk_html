@@ -62,7 +62,7 @@ var app = new Vue({
         handle_data: function(event,flag) {
             this.active = flag ? flag : this.active;
             this.param.cdate = get_now_date();
-            this.param.cdate = "2021-11-24";
+            // this.param.cdate = "2021-11-24";
             this.reset_param()
             ob = this;
             if (event) {
