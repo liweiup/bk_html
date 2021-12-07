@@ -121,7 +121,6 @@
                             <td :width=table_th[6][1]  class=""><a v-for="(tdv,tdi) in todo.now_price"><p>{{ tdv }}</p></a><b></b></td>
                             <td :width=table_th[7][1]  class=""><a>{{ get_upper(todo.circulate_value) }}</a><b></b></td>
                             <td :width=table_th[8][1]  class=""><a>{{ todo.pe }}</a><b></b></td>
-
                             <td :width=table_th[9][1]  class="">
                                 <p v-for="(tdv,tdi) in todo.real_earn_money">
                                     <c>{{ todo.date_sort[tdi] }}  {{ get_upper(tdv) }}</c>
@@ -130,7 +129,7 @@
                                         <a href="" v-if="todo.em_tb_rise[tdi] > 0" style="color:red">{{ get_float(todo.em_tb_rise[tdi],2) }}</a>
                                         <a href="" v-if="todo.em_tb_rise[tdi] < 0" style="color:green">{{ get_float(todo.em_tb_rise[tdi],2) }}</a>
                                     </a>
-                                    &nbsp;
+                                    |
                                     <a href="">
                                         <a href="" v-if="todo.em_hb_rise[tdi] > 0" style="color:red">{{ get_float(todo.em_hb_rise[tdi],2) }}</a>
                                         <a href="" v-if="todo.em_hb_rise[tdi] < 0" style="color:green">{{ get_float(todo.em_hb_rise[tdi],2) }}</a>
@@ -145,7 +144,7 @@
                                         <a href="" v-if="todo.rp_tb_rise[tdi] > 0" style="color:red">{{ get_float(todo.rp_tb_rise[tdi],2) }}</a>
                                         <a href="" v-if="todo.rp_tb_rise[tdi] < 0" style="color:green">{{ get_float(todo.rp_tb_rise[tdi],2) }}</a>
                                     </a>
-                                    &nbsp;
+                                    |
                                     <a href="">
                                         <a href="" v-if="todo.rp_hb_rise[tdi] > 0" style="color:red">{{ get_float(todo.rp_hb_rise[tdi],2) }}</a>
                                         <a href="" v-if="todo.rp_hb_rise[tdi] < 0" style="color:green">{{ get_float(todo.rp_hb_rise[tdi],2) }}</a>
