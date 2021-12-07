@@ -97,31 +97,62 @@
                 <table class="m-table J-ajax-table" >
                     <thead>
                         <tr>
-                            <th v-for="(v,i) in table_th"><a href="###" field="" class="J-ajax-a" v-on:click="sort_data($event,v[2])" order="desc">{{ v[0] }}<i class="arr-down"></i></a></th>
+                            <th v-for="(v,i) in table_th" :width=v[1]><a href="###" field="" class="J-ajax-a" v-on:click="sort_data($event,v[2])" order="desc">{{ v[0] }}<i class="arr-down"></i></a></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="even" v-for="(todo,index) in todos" v-if="active == 'individual'">
                             <!-- <td class="first tc">{{todos[0]}}</td> -->
-                            <td class="tl"><a :href="'http://stockpage.10jqka.com.cn/'+todo.individual_code" target="_blank">{{ todo.individual_name }}</a></td>
-                            <td class=""><a v-for="(tdv,tdi) in todo.rose_ratio"><p>{{ get_float(tdv,2) }}</p></a>
+                            <td :width=table_th[0][1] class="tl"><a :href="'http://stockpage.10jqka.com.cn/'+todo.individual_code" target="_blank">{{ todo.individual_name }}</a></td>
+                            <td :width=table_th[1][1]  class=""><a v-for="(tdv,tdi) in todo.rose_ratio"><p>{{ get_float(tdv,2) }}</p></a>
                                 <b v-if="todo.avg_rose_ratio > 0" style="color:red">{{get_float(todo.avg_rose_ratio,2)}}</b>
                                 <b v-if="todo.avg_rose_ratio < 0" style="color:green">{{get_float(todo.avg_rose_ratio,2)}}</b>
                             </td>
-                            <td class=""><a v-for="(tdv,tdi) in todo.turnover_ratio"><p>{{ get_float(tdv,2) }}</p></a><b>{{get_float(todo.avg_turnover_ratio,2)}}</b></td>
-                            <td class=""><a v-for="(tdv,tdi) in todo.relative"><p>{{ tow_number(tdv,2) }}</p></a>
+                            <td :width=table_th[2][1]  class=""><a v-for="(tdv,tdi) in todo.turnover_ratio"><p>{{ get_float(tdv,2) }}</p></a><b>{{get_float(todo.avg_turnover_ratio,2)}}</b></td>
+                            <td :width=table_th[3][1]  class=""><a v-for="(tdv,tdi) in todo.relative"><p>{{ tow_number(tdv,2) }}</p></a>
                                 <b v-if="todo.avg_relative > 1" style="color:red">{{tow_number(todo.avg_relative)}}</b>
                                 <b v-if="todo.avg_relative < 1" style="color:green">{{tow_number(todo.avg_relative)}}</b>
                             </td>
-                            <td class=""><a v-for="(tdv,tdi) in todo.amplitude_ratio"><p>{{ get_float(tdv,2) }}</p></a><b>{{get_float(todo.avg_amplitude_ratio,2)}}</b></td>
-                            <td class=""><a v-for="(tdv,tdi) in todo.ob_price"><p>{{ get_upper(tdv) }}</p></a>
+                            <td :width=table_th[4][1]  class=""><a v-for="(tdv,tdi) in todo.amplitude_ratio"><p>{{ get_float(tdv,2) }}</p></a><b>{{get_float(todo.avg_amplitude_ratio,2)}}</b></td>
+                            <td :width=table_th[5][1]  class=""><a v-for="(tdv,tdi) in todo.ob_price"><p>{{ get_upper(tdv) }}</p></a>
                                 <b  v-if="todo.avg_ob_rise_price > 0" style="color:red">({{ get_upper(todo.avg_ob_price) }} {{ get_float(todo.avg_ob_rise_price,2) }})</b>
                                 <b  v-if="todo.avg_ob_rise_price < 0" style="color:green">({{ get_upper(todo.avg_ob_price) }} {{ get_float(todo.avg_ob_rise_price,2) }})</b>
                             </td>
-                            <td class=""><a v-for="(tdv,tdi) in todo.now_price"><p>{{ tdv }}</p></a><b></b></td>
-                            <td class=""><a>{{ get_upper(todo.circulate_value) }}</a><b></b></td>
-                            <td class=""><a>{{ todo.pe }}</a><b></b></td>
-                            <td class=""><a>{{ get_upper(todo.circulate_stock) }}</a><b></b></td>
+                            <td :width=table_th[6][1]  class=""><a v-for="(tdv,tdi) in todo.now_price"><p>{{ tdv }}</p></a><b></b></td>
+                            <td :width=table_th[7][1]  class=""><a>{{ get_upper(todo.circulate_value) }}</a><b></b></td>
+                            <td :width=table_th[8][1]  class=""><a>{{ todo.pe }}</a><b></b></td>
+
+                            <td :width=table_th[9][1]  class="">
+                                <p v-for="(tdv,tdi) in todo.real_earn_money">
+                                    <c>{{ todo.date_sort[tdi] }}  {{ get_upper(tdv) }}</c>
+                                    &nbsp;
+                                    <a href="">
+                                        <a href="" v-if="todo.em_tb_rise[tdi] > 0" style="color:red">{{ get_float(todo.em_tb_rise[tdi],2) }}</a>
+                                        <a href="" v-if="todo.em_tb_rise[tdi] < 0" style="color:green">{{ get_float(todo.em_tb_rise[tdi],2) }}</a>
+                                    </a>
+                                    &nbsp;
+                                    <a href="">
+                                        <a href="" v-if="todo.em_hb_rise[tdi] > 0" style="color:red">{{ get_float(todo.em_hb_rise[tdi],2) }}</a>
+                                        <a href="" v-if="todo.em_hb_rise[tdi] < 0" style="color:green">{{ get_float(todo.em_hb_rise[tdi],2) }}</a>
+                                    </a>
+                                </p>
+                            </td>
+                            <td :width=table_th[10][1]  class="">
+                                <p v-for="(tdv,tdi) in todo.real_retain_profit">
+                                    <a href="" v-if="tdv > 0" style="color:red">{{ get_upper(tdv) }}</a>
+                                    <a href="" v-if="tdv < 0" style="color:green">{{ get_upper(tdv) }}</a>
+                                     <a href="">
+                                        <a href="" v-if="todo.rp_tb_rise[tdi] > 0" style="color:red">{{ get_float(todo.rp_tb_rise[tdi],2) }}</a>
+                                        <a href="" v-if="todo.rp_tb_rise[tdi] < 0" style="color:green">{{ get_float(todo.rp_tb_rise[tdi],2) }}</a>
+                                    </a>
+                                    &nbsp;
+                                    <a href="">
+                                        <a href="" v-if="todo.rp_hb_rise[tdi] > 0" style="color:red">{{ get_float(todo.rp_hb_rise[tdi],2) }}</a>
+                                        <a href="" v-if="todo.rp_hb_rise[tdi] < 0" style="color:green">{{ get_float(todo.rp_hb_rise[tdi],2) }}</a>
+                                    </a>
+                                </p>
+                            </td>
+                            <td :width=table_th[11][1]  class=""><a>{{ get_upper(todo.circulate_stock) }}</a><b></b></td>
                         </tr>
 
                         <tr class="even" v-for="(todo,index) in todos" v-if="active == 'plate'">

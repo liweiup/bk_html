@@ -6,6 +6,9 @@ body, button, input, select, textarea {
     font: 12px/1.5 \5FAE\8F6F\96C5\9ED1;
     color: #333;
 }
+div,table,thead,th{
+     white-space: nowrap;//强制不折行
+}
 table tbody {
 display:block;
 height:700px;
@@ -252,6 +255,7 @@ a {
 .page-main {
     position: relative;
     padding: 30px 25px;
+    overflow-x: scroll;
 }
 .table-tit h2 {
     float: left;
@@ -285,6 +289,7 @@ h2 {
 .table-tab {
     padding: 8px 10px;
     background: #f7fafb;
+    width: 140%;
     border-bottom: 1px solid #e6ebed;
 }
 .table-tit {
@@ -365,7 +370,7 @@ td {
     background: #fff;
     font-size: 13px;
     overflow: scroll;
-    width: 100%;
+    width: 140%;
     table-layout:fixed !important;
 }
 .m-table th {

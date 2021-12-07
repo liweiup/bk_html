@@ -12,16 +12,18 @@ var app = new Vue({
                 ["下跌家数","100px","drop_company_num"],
             ],
             individual: [
-                ["股票","80px","individual_code"],
-                ["涨跌幅","270px","avg_rose_ratio"],
-                ["换手率","270px","avg_turnover_ratio"],
-                ["量比","190px","avg_relative"],
-                ["振幅","280px","avg_amplitude_ratio"],
-                ["成交额","300px","avg_ob_rise_price"],
-                ["当前价格","150px","now_price"],
-                ["流通市值","90px","circulate_value"],
-                ["市盈率","80px","pe"],
-                ["流通股","90px","circulate_stock"],
+                ["股票","8%","individual_code"],
+                ["涨跌幅","8%","avg_rose_ratio"],
+                ["换手率","8%","avg_turnover_ratio"],
+                ["量比","8%","avg_relative"],
+                ["振幅","8%","avg_amplitude_ratio"],
+                ["成交额","15%","avg_ob_rise_price"],
+                ["当前价格","8%","now_price"],
+                ["流通市值","8%","circulate_value"],
+                ["市盈率","8%","pe"],
+                ["营业收入 同比|环比","20%","real_earn_money"],
+                ["净利润 同比|环比","20%","real_retain_profit"],
+                ["流通股","8%","circulate_stock"],
             ],
             active:"individual",
             param:{
@@ -60,6 +62,7 @@ var app = new Vue({
         handle_data: function(event,flag) {
             this.active = flag ? flag : this.active;
             this.param.cdate = get_now_date();
+            this.param.cdate = "2021-11-24";
             this.reset_param()
             ob = this;
             if (event) {
