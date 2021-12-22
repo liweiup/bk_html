@@ -120,7 +120,7 @@
                             </td>
                             <td :width=table_th[6][1]  class=""><a v-for="(tdv,tdi) in todo.now_price"><p>{{ tdv }}</p></a><b></b></td>
                             <td :width=table_th[7][1]  class=""><a>{{ get_upper(todo.circulate_value) }}</a><b></b></td>
-                            <td :width=table_th[8][1]  class=""><a>{{ todo.pe }}</a><b></b></td>
+                            <td :width=table_th[8][1]  class=""><a>{{ tow_number(todo.pe,2) }}</a><b></b></td>
                             <td :width=table_th[9][1]  class="">
                                 <p v-for="(tdv,tdi) in todo.real_earn_money">
                                     <c>{{ todo.date_sort[tdi] }}  {{ get_upper(tdv) }}</c>
@@ -156,26 +156,26 @@
 
                         <tr class="even" v-for="(todo,index) in todos" v-if="active == 'plate'">
                             <!-- <td class="first tc">{{todos[0]}}</td> -->
-                            <td class="tl"><a :href="'http://q.10jqka.com.cn/thshy/detail/code/'+todo.plate_code" target="_blank">{{ todo.plate_name }}</a></td>
-                            <td class=""><a v-for="(tdv,tdi) in todo.rose_ratio"><p>{{ get_float(tdv,2) }}</p></a>
+                            <td :width=table_th[0][1] class="tl"><a :href="'http://q.10jqka.com.cn/thshy/detail/code/'+todo.plate_code" target="_blank">{{ todo.plate_name }}</a></td>
+                            <td :width=table_th[1][1] class=""><a v-for="(tdv,tdi) in todo.rose_ratio"><p>{{ get_float(tdv,2) }}</p></a>
                                 <b v-if="todo.avg_rose_ratio > 0" style="color:red">{{get_float(todo.avg_rose_ratio,2)}}</b>
                                 <b v-if="todo.avg_rose_ratio < 0" style="color:green">{{get_float(todo.avg_rose_ratio,2)}}</b>
                             </td>
-                            <td class=""><a v-for="(tdv,tdi) in todo.ob_price"><p>{{ get_upper(tdv) }}</p></a>
+                            <td :width=table_th[2][1] class=""><a v-for="(tdv,tdi) in todo.ob_price"><p>{{ get_upper(tdv) }}</p></a>
                                 <b  v-if="todo.avg_ob_rise_price > 0" style="color:red">({{ get_upper(todo.avg_ob_price) }} {{ get_float(todo.avg_ob_rise_price,2) }})</b>
                                 <b  v-if="todo.avg_ob_rise_price < 0" style="color:green">({{ get_upper(todo.avg_ob_price) }} {{ get_float(todo.avg_ob_rise_price,2) }})</b>
                             </td>
-                            <td class=""><a v-for="(tdv,tdi) in todo.ob_volume"><p>{{ get_upper(tdv) }}</p></a>
+                            <td :width=table_th[3][1] class=""><a v-for="(tdv,tdi) in todo.ob_volume"><p>{{ get_upper(tdv) }}</p></a>
                                 <b  v-if="todo.avg_ob_rise_volume > 0" style="color:red">({{ get_upper(todo.avg_ob_volume) }} {{ get_float(todo.avg_ob_rise_volume,2) }})</b>
                                 <b  v-if="todo.avg_ob_rise_volume < 0" style="color:green">({{ get_upper(todo.avg_ob_volume) }} {{ get_float(todo.avg_ob_rise_volume,2) }})</b>
                             </td>
-                            <td class=""><a v-for="(tdv,tdi) in todo.fund_real_in"><p>{{ get_upper(tdv) }}</p></a>
+                            <td :width=table_th[4][1] class=""><a v-for="(tdv,tdi) in todo.fund_real_in"><p>{{ get_upper(tdv) }}</p></a>
                                 <b  v-if="todo.avg_fund_real_in > 0" style="color:red">{{ get_upper(todo.avg_fund_real_in) }}</b>
                                 <b  v-if="todo.avg_fund_real_in < 0" style="color:green">{{ get_upper(todo.avg_fund_real_in) }}</b>
                             </td>
-                            <td  class=""><a v-for="(tdv,tdi) in todo.avg_price"><p>{{ tow_number(tdv) }} </p></a><b></b></td>
-                            <td  class=""><a><p v-for="(tdv,tdi) in todo.rise_company_num">{{ tdv }}</p></a><b></b></td>
-                            <td  class=""><a><p v-for="(tdv,tdi) in todo.drop_company_num">{{ tdv }}</p></a><b></b></td>
+                            <td  :width=table_th[5][1] class=""><a v-for="(tdv,tdi) in todo.avg_price"><p>{{ tow_number(tdv) }} </p></a><b></b></td>
+                            <td  :width=table_th[6][1] class=""><a><p v-for="(tdv,tdi) in todo.rise_company_num">{{ tdv }}</p></a><b></b></td>
+                            <td  :width=table_th[7][1] class=""><a><p v-for="(tdv,tdi) in todo.drop_company_num">{{ tdv }}</p></a><b></b></td>
                         </tr>
                      </tbody>
                 </table>
@@ -186,13 +186,13 @@
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.3"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue-resource/1.5.3/vue-resource.js"></script>
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="./js/const.js"></script>
 <script src="./js/layer/layer.js"></script>
 <script src="./js/p.js"></script>
 <script src="./js/vp.js"></script>
-<script src="./js/jq.js"></script>
+<!-- <script src="./js/jq.js"></script> -->
 <body>
 </html>

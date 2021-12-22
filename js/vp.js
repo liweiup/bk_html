@@ -2,14 +2,14 @@ var app = new Vue({
     el: '#app',
         data: {
              plate: [
-                ["板块","200px",""],
-                ["涨跌幅","270px","avg_rose_ratio"],
-                ["成交额","340px","avg_ob_rise_price"],
-                ["成交量","280px","avg_ob_rise_volume"],
-                ["净流入额","260px","avg_fund_real_in"],
-                ["均价","200px","avg_price"],
-                ["上涨家数","100px","rise_company_num"],
-                ["下跌家数","100px","drop_company_num"],
+                ["板块","8%",""],
+                ["涨跌幅","12%","avg_rose_ratio"],
+                ["成交额","12%","avg_ob_rise_price"],
+                ["成交量","12%","avg_ob_rise_volume"],
+                ["净流入额","12%","avg_fund_real_in"],
+                ["均价","12%","avg_price"],
+                ["上涨家数","8%","rise_company_num"],
+                ["下跌家数","8%","drop_company_num"],
             ],
             individual: [
                 ["股票","8%","individual_code"],
